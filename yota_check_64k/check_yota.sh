@@ -16,9 +16,9 @@ SCRIPTRUN="$CHECK --data \"$COMMANDACCESS\" http://hello.yota.ru/php/go.php"
 #if [ $($COMMANDCHECK | grep -Ec 'HTTP/1\.1 301|HTTP/1\.1 302') -gt 0 ];
 if [ $($COMMANDCHECK | grep -Ec 'http://hello.yota.ru') -gt 0 ];
 then
-echo "----- Check start "$edate" -----";
+#echo "----- Check start "$edate" -----";
 eval "$SCRIPTRUN"
-echo "----- Check end "$edate" -----\n";
+#echo "----- Check end "$edate" -----\n";
 fi
 
 # check header:
