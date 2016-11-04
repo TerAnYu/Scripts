@@ -1,4 +1,11 @@
 #!/bin/sh
+# https://www.linux.org.ru/forum/general/11401301
+
+# check header:
+# curl -s -I ya.ru
+# or
+# curl -A "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0" -s -I ya.ru | grep -Ec 'http://hello.yota.ru'
+
 
 edate=`date`
 checkhost=ya.ru
@@ -20,8 +27,3 @@ then
 eval "$SCRIPTRUN"
 #echo "----- Check end "$edate" -----\n";
 fi
-
-# check header:
-# curl -s -I ya.ru
-# or
-# curl -A "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0" -s -I ya.ru | grep -Ec 'http://hello.yota.ru'
