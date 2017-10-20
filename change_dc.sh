@@ -11,23 +11,20 @@ contr3="10.150.102.10"
 contr4="10.150.102.11"
 eths=""
 
-ping_cmd="ping -q -c 1 "
-
-
-if ${ping_cmd} $contr1 ; then
+if `nc -z -w 5 $contr1 389` ; then
     eths=$contr1
     echo success dc1
-elif ${ping_cmd} $contr2; then
+elif `nc -z -w 5 $contr2 389`; then
     eths=$contr2
     echo success dc2
-elif ${ping_cmd} $contr3; then
+elif `nc -z -w 5 $contr3 389`; then
     eths=$contr3
     echo success dc3
-elif ${ping_cmd} $contr4; then
+elif `nc -z -w 5 $contr4 389`; then
     eths=$contr4
     echo success dc4
 else
-    echo failure
+    echo "Всё пропало! Все контроллеры недоступны!"
 fi
 
 
