@@ -51,7 +51,7 @@ then
 else
 # https://serverfault.com/questions/247623/iptables-redirect-local-connections-to-remote-system-port
     sysctl -w net.ipv4.conf.all.route_localnet=1
-    echo 1 > /proc/sys/net/ipv4/ip_forward
+    sysctl -w net.ipv4.ip_forward=1
     iptables -t nat -v -L POSTROUTING -n --line-number | grep -w localporttoaddress | awk '{system ("iptables -t nat -D POSTROUTING " $1)}'
     iptables -t nat -A POSTROUTING -m addrtype --src-type LOCAL --dst-type UNICAST -j MASQUERADE -m comment --comment "localporttoaddress"
 fi
