@@ -51,6 +51,8 @@ then
     echo
 else
 # https://serverfault.com/questions/247623/iptables-redirect-local-connections-to-remote-system-port
+# (which works only in kernels >= 3.6)
+# https://superuser.com/questions/661772/iptables-redirect-to-localhost
     sysctl -w net.ipv4.conf.all.route_localnet=1
     sysctl -w net.ipv4.ip_forward=1
     iptables -t nat -v -L POSTROUTING -n --line-number | grep -w localporttoaddress | awk '{system ("iptables -t nat -D POSTROUTING " $1)}'
