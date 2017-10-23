@@ -11,6 +11,7 @@ contr3="10.150.102.10"
 contr4="10.150.102.11"
 eths=""
 
+# https://devidiom.blog/2015/12/03/simple-bash-server-check-script/
 if `nc -z -w 5 $contr1 389` ; then
     eths=$contr1
     echo success dc1
