@@ -26,6 +26,7 @@ elif `nc -z -w 5 $contr4 389`; then
     echo success dc4
 else
     echo "Всё пропало! Все контроллеры недоступны!"
+    rm -f /tmp/*.lpta
 fi
 
 
