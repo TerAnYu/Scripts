@@ -51,6 +51,7 @@ if [ -n "`iptables -t nat -v -L POSTROUTING -n --line-number | grep -w localport
 then
     echo
 else
+    rm -f /tmp/*.lpta
 # https://serverfault.com/questions/247623/iptables-redirect-local-connections-to-remote-system-port
 # (which works only in kernels >= 3.6)
 # https://superuser.com/questions/661772/iptables-redirect-to-localhost
