@@ -1,28 +1,29 @@
 #!/bin/sh
+source ./change_dc_conf.sh
 
 # необходимо установить в rl.local > sleep 120s && /bin/sh /etc/change_dc.sh
 # Задаём порты для локального назначения с удалённого адреса
 #PORTS="389 636 3268 3269 88 9389 464"
-PORTSS="389,636,3268,3269,88,9389,464"
+# PORTSS="389,636,3268,3269,88,9389,464"
 
-# Destinations
-contr1="10.150.100.10"
-contr2="10.150.100.11"
-contr3="10.150.102.10"
-contr4="10.150.102.11"
-eths=""
+# # Destinations
+# contr1="10.150.100.10"
+# contr2="10.150.100.11"
+# contr3="10.150.102.10"
+# contr4="10.150.102.11"
+# eths=""
 
 # https://devidiom.blog/2015/12/03/simple-bash-server-check-script/
-if `nc -z -w 5 $contr1 389` ; then
+if `nc -z -w 5 $contr1 $CPORT` ; then
     eths=$contr1
     echo success dc1
-elif `nc -z -w 5 $contr2 389`; then
+elif `nc -z -w 5 $contr2 $CPORT`; then
     eths=$contr2
     echo success dc2
-elif `nc -z -w 5 $contr3 389`; then
+elif `nc -z -w 5 $contr3 $CPORT`; then
     eths=$contr3
     echo success dc3
-elif `nc -z -w 5 $contr4 389`; then
+elif `nc -z -w 5 $contr4 $CPORT`; then
     eths=$contr4
     echo success dc4
 else
