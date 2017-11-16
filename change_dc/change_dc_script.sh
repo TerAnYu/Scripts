@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 . $(dirname $0)/change_dc_conf.sh
 
 # https://devidiom.blog/2015/12/03/simple-bash-server-check-script/
