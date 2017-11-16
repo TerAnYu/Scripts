@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 source ./change_dc_conf.sh
 
 # необходимо установить в rl.local > sleep 120s && /bin/sh /etc/change_dc.sh
