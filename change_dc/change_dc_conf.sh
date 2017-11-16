@@ -5,6 +5,9 @@
 #PORTS="389 636 3268 3269 88 9389 464"
 PORTSS="389,636,3268,3269,88,9389,464"
 CPORT="389"
+comment="localporttoaddress"
+biniptables=/sbin/iptables
+binsysctl=/sbin/sysctl
 
 # Destinations
 contr1="10.150.100.10"
