@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set PATH=/usr/sbin:/sbin:/usr/bin:/bin
 
 # необходимо установить в rl.local > sleep 120s && /bin/sh /etc/change_dc.sh
 # Задаём порты для локального назначения с удалённого адреса
