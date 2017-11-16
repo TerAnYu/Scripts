@@ -14,16 +14,16 @@ source ./change_dc_conf.sh
 # eths=""
 
 # https://devidiom.blog/2015/12/03/simple-bash-server-check-script/
-if `nc -z -w 5 $contr1 $CPORT` ; then
+if `nc -z -w 5 "${contr1}" "${CPORT}"` ; then
     eths=$contr1
     echo success dc1
-elif `nc -z -w 5 $contr2 $CPORT`; then
+elif `nc -z -w 5 "${contr2}" "${CPORT}"`; then
     eths=$contr2
     echo success dc2
-elif `nc -z -w 5 $contr3 $CPORT`; then
+elif `nc -z -w 5 "${contr3}" "${CPORT}"`; then
     eths=$contr3
     echo success dc3
-elif `nc -z -w 5 $contr4 $CPORT`; then
+elif `nc -z -w 5 "${contr4}" "${CPORT}"`; then
     eths=$contr4
     echo success dc4
 else
