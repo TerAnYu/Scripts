@@ -2,7 +2,7 @@
 . $(dirname $0)/change_dc_conf.sh
 
 # https://devidiom.blog/2015/12/03/simple-bash-server-check-script/
-if `nc -z -w 5 "${contr1}" "${CPORT}"` ; then
+if   `nc -z -w 5 "${contr1}" "${CPORT}"`; then
     eths=${contr1}
     echo success dc1
 elif `nc -z -w 5 "${contr2}" "${CPORT}"`; then
@@ -41,7 +41,6 @@ if [ -n "`iptables -t nat -v -L POSTROUTING -n --line-number | grep -w localport
 then
     echo
 else
-    rm -f /tmp/*.lpta
 # https://serverfault.com/questions/247623/iptables-redirect-local-connections-to-remote-system-port
 # (which works only in kernels >= 3.6)
 # https://superuser.com/questions/661772/iptables-redirect-to-localhost
