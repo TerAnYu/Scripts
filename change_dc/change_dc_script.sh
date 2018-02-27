@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# This comment and code TerAnYu, selectable license under the GPL2.0 or later
+# or CC-SA 4.0 (CreativeCommons Share Alike) or # later. (c) 2008. All rights
+# reserved. No warranty of any kind. You have been warned.
+# http://www.gnu.org/licenses/gpl-2.0.txt
+# https://creativecommons.org/licenses/by-sa/4.0/
+
 # https://unix.stackexchange.com/questions/217284/not-all-shell-scripts-working-with-crontab
 set PATH=/usr/sbin:/sbin:/usr/bin:/bin
 . $(dirname $0)/change_dc_conf.sh
